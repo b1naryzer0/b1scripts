@@ -23,3 +23,7 @@ https://docs.microsoft.com/de-de/windows-hardware/drivers/install/cm-prob-unsign
 Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_UNSIGNED_DRIVER“ }))
 { &"pnputil" /remove-device $dev.InstanceId }
 &„devcon.exe“ /rescan
+---
+Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_UNSIGNED_DRIVER“ }))
+{ &"pnputil" /remove-device $dev.InstanceId }
+pnputil.exe /scan-devices
