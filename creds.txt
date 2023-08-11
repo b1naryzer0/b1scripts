@@ -1,0 +1,4 @@
+Extract credentials on a windows box
++++++++++++++++++++++++++++++++++++++
+
+rundll32 keymgr.dll, KRShowKeyMgr
