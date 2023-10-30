@@ -1,23 +1,43 @@
 driverquery /SI -> gibt Infos über Treiber und die Signatur aus
+---
 devcon /rescan -> löst eine Suche nach neuer Hardware aus
+---
 pnputil /enum-devices /problem -> listet Devices mit Problemen
+---
 pnputil /enum-devices /problem 52 -> listet Devices mit error 52
+---
 Get-PnpDevice | Get-Member
+---
 Get-PnpDevice | Where-Object { $_.Status -eq "Error" } à listet PnP-Geräte mit Error
+---
 Get-WmiObject Win32_PNPEntity | Where-Object{$_.ConfigManagerErrorCode -ne 0} | Select Name, DeviceID
+---
 Get-WmiObject Win32_PNPEntity | Where-Object{$_.ConfigManagerErrorCode -eq 25} | Select Name, DeviceID à listet Geräte mit Error Code 52
+---
 Get-WmiObject Win32_PNPEntity | Where-Object{$_.ConfigManagerErrorCode -eq 22} | % { $_.StopService();$_.Delete() } -> funktioniert nicht
+---
 https://www.codeproject.com/Tips/5313040/Batch-Uninstall-Devices-in-PowerShell
+---
 foreach ($dev in (Get-PnpDevice | Where-Object{$_.Name -eq "Name of device to remove")){ &"pnputil" /remove-device $dev.InstanceId }
+---
 ForEach ($dev in (Get-WmiObject Win32_PNPEntity | Where-Object{$_.ConfigManagerErrorCode -eq 25})){$dev}
+---
 Get-PnpDevice | Where-Object { $_.Status -eq "Error" }
+---
 Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –ne „CM_PROB_NONE“ } | fl
+---
 https://community.osr.com/discussion/236036/akward-cm-prob-unsigned-driver-problem
+---
 https://docs.microsoft.com/en-us/windows-hardware/drivers/install/cm-prob-unsigned-driver
+---
 Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_UNSIGNED_DRIVER“ } | fl            à lists all drivers with code 52
+---
 https://docs.microsoft.com/de-de/windows-hardware/drivers/install/cm-prob-disabled
+---
 Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_DISABLED“ })){$dev.caption}
+---
 Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_DISABLED“ })){ &"pnputil" /remove-device $dev.InstanceId }
+---
 https://docs.microsoft.com/de-de/windows-hardware/drivers/install/cm-prob-unsigned-driver
 ---
 Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_UNSIGNED_DRIVER“ }))
@@ -27,3 +47,5 @@ Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq
 Foreach ($dev in (Get-PnpDevice | Where-Object { $_.ConfigManagerErrorCode –eq „CM_PROB_UNSIGNED_DRIVER“ }))
 { &"pnputil" /remove-device $dev.InstanceId }
 pnputil.exe /scan-devices
+---
+driverquery /FO CSV /V | Out-File $env:temp\drivers.csv
