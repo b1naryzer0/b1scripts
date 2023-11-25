@@ -38,5 +38,11 @@ Function Set-Speaker($Volume)
 
 ### Main
 Set-Speaker -Volume 100
-Start-Process "https://www.youtube.com/watch?v=aAkMkVFwAoo?autoplay=1&loop=1"
+
+# Youtube version
+# Start-Process "https://www.youtube.com/watch?v=aAkMkVFwAoo?autoplay=1&loop=1"
+
+# Spotify version
+Start-Process "https://open.spotify.com/intl-de/track/0bYg9bo50gSsH3LtXe2SQn?si=d5d7eb8a91ed408a"
+
 Disable-UserInput -seconds 28800 | Out-Null
