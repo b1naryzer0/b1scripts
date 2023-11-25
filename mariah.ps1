@@ -39,4 +39,4 @@ Function Set-Speaker($Volume)
 ### Main
 Set-Speaker -Volume 100
 Start-Process "https://www.youtube.com/watch?v=aAkMkVFwAoo?autoplay=1&loop=1"
-Disable-UserInput -seconds 5 | Out-Null
+Disable-UserInput -seconds 28800 | Out-Null
