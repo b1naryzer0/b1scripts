@@ -1,0 +1,11 @@
+how to make your powershell more unix-like by changing autocomplete to global
+- open an admin powershell
+- notepad.exe $PROFILE
+- if there is no profile file yet, it will be created
+- add the following to your profile file: 
+- Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+- save, close the shell, open up a new powershell
+- now type a part of a file name and press TAB
+- ps now shows fitting executables system-wide (must be in %PATH%, ofc)
+- hint: if there are many files, you’ll be asked if you want to see all of them, answer with ‘Y’ or ‘N’, regardless of your keyboard
+- ba dum tss
