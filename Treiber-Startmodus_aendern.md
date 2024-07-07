@@ -75,6 +75,30 @@ Ach MS, nagel Dir doch ein Brett vors Knie!! ☠️😁
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
+Links 
+	
+	https://learn.microsoft.com/en-us/windows-hardware/drivers/install/specifying-driver-load-order
+	
+	https://learn.microsoft.com/en-us/windows-hardware/drivers/install/inf-addservice-directive#examples
+	
+	https://devblogs.microsoft.com/scripting/using-windows-powershell-to-determine-service-launch-order/
+	
+	https://learn.microsoft.com/en-us/windows-hardware/drivers/wdf/introduction-to-registry-keys-for-drivers
+	
+	https://learn.microsoft.com/de-de/windows-hardware/drivers/devtest/tools-for-verifying-drivers
+	
+	https://learn.microsoft.com/de-de/windows/win32/cimwin32prov/win32-baseservice
+	
+	https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/changestartmode-method-in-class-win32-service
+	
+	https://powershell.one/wmi/root/cimv2/win32_systemdriver
+	
+	https://powershell.one/wmi/root/cimv2/win32_systemdriver-ChangeStartMode
+	
+	https://learn.microsoft.com/de-de/windows/win32/cimwin32prov/changestartmode-method-in-class-win32-systemdriver
+	
+	https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/changestartmode-method-in-class-win32-systemdriver
+	
 
 
 ----------------------------------------------------------------------------------------
