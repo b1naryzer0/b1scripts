@@ -60,6 +60,18 @@ gültige Methoden für Win32_SystemDriver gem. https://learn.microsoft.com/de-de
 Success!
 
 ----------------------------------------------------------------------------------------
+Test: wie ist der Status nach Ändern der Startart auf Manual und Reboot des Systems? 
+
+	$wmi = gwmi -ClassName Win32_SystemDriver | Where-Object { $_.Name -match 'npcap' }
+
+	PS C:\> $wmi.StartMode
+	System
+
+Resultat: Computer says no!
+
+Ach MS, nagel Dir doch ein Brett vors Knie!! ☠️😁
+
+----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
