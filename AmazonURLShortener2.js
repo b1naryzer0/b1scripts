@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Amazon URL Shortener
-// @namespace    -
+// @namespace    https://github.com/b1naryzer0/b1scripts/blob/main/AmazonURLShortener2.js
 // @version      0.0.1
-// @author       -
+// @author       
 // @description Adds a button to copy the short link of Amazon products and optionally modifies the URL in the address bar
 // @include      *://*.amazon.*/*
 // @include       https://*.amazon.co.jp/*
